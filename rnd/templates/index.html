@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            #task-title {
+                border: 1px solid black;
+                padding: 5px;
+                border-radius: 5px;
+                width: 100%;
+            }
+            #task-description {
+                border: 1px solid black;
+                padding: 5px;
+                border-radius: 5px;
+                width: 100%;
+            }
+            #task-form{
+                max-width: 600px;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
+            #save-button{
+                padding: 10px;
+                background-color: green;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="post" id="task-form">
+            {% csrf_token %}
+            {{ task_form }}
+            <button type="submit" name="save_task" id="save-button">Save</button>
+        </form>
+        <ul id="task-form">
+            {% for task in tasks %}
+            <li class="list-disc">
+                <h3>{{ task.title }}</h3>
+                <p>{{ task.description }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
