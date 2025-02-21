@@ -21,4 +21,6 @@ from rnd.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
+    path('task-delete/<int:id>', task_delete, name = 'task_delete'),
+    path('task-edit/<int:id>', task_edit, name = 'task_edit')
 ]

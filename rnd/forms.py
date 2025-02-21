@@ -9,11 +9,13 @@ class TaskForm(forms.ModelForm):
 
             'title': forms.TextInput(attrs = {
                 'id': 'task-title',
-                'placeholder': 'Enter task title...'
+                'placeholder': 'Enter task title...',
+                'class': 'w-full border py-1 px-2 rounded'
             }),
 
             'description': forms.Textarea(attrs = {
                 'id': 'task-description',
-                'placeholder': 'Enter task description...'
+                'placeholder': 'Enter task description...',
+                'class': 'w-full border py-1 px-2 rounded'
             })
         }
